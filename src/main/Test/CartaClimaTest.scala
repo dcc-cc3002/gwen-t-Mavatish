@@ -1,6 +1,7 @@
 package cl.uchile.dcc
 package Test
 import gwent.CartaClima
+
 class CartaClimaTest extends munit.FunSuite {
   var cc1: CartaClima = _
   var cc2: CartaClima = _
