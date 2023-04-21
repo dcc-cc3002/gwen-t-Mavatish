@@ -1,6 +1,7 @@
 package cl.uchile.dcc
 package Test
-import gwent.CartaClima
+
+import cl.uchile.dcc.gwent.cartas.cartaClima.CartaClima
 
 class CartaClimaTest extends munit.FunSuite {
   var cc1: CartaClima = _
@@ -16,7 +17,7 @@ class CartaClimaTest extends munit.FunSuite {
   test("Un jugador debe tener nombre") {
     assertEquals(cc1.getnombrecc(), "Zhongli")
     assertEquals(cc3.getnombrecc(), "Hu-tao")
-    assertEquals(cc2.getefecto(), "El señor de la noche")
+    assertEquals(cc2.darHabilidad(), "El señor de la noche")
     assertEquals(cc2, cc2)
   }
 }

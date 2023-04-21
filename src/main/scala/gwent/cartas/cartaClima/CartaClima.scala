@@ -1,5 +1,5 @@
 package cl.uchile.dcc
-package gwent
+package gwent.cartas
 
 /**
  * Esta clase reepresentara las cartas de Clima junto a su efecto
