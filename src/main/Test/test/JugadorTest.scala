@@ -33,7 +33,17 @@ class JugadorTest extends munit.FunSuite {
     assertEquals(j1.getnombre(), "Zhongli")
     assertEquals(j2.getcontador(), 4)
   }
-  test("hashcode"){
+  test("hashcode") {
     j1.hashCode()
+    j2.hashCode()
+  }
+  test("hashcode distintos") {
+    assert(j1.hashCode() != j2.hashCode())
+  }
+  test("Equals") {
+    assert(j1.equals(j1) == true)
+    assert(j2.equals(j2) == true)
+    assert(j2.equals(j1) == false)
+
   }
 }

@@ -13,9 +13,21 @@ class CuerpoACuerpoTest extends munit.FunSuite {
   test("Las cartas unidad de tipo A distancia tienen nombre, habilidad y fuerza") {
     assertEquals(c1.darHabilidad(), "atraer")
     assertEquals(c2.darHabilidad(), "El señor de la noche")
+    assertEquals(c1.gethabilidad, "atraer")
+    assertEquals(c2.getfuerza, 6)
     assertEquals(c1, c1)
   }
-  test("hashcode"){
+  test("hashcode") {
     c1.hashCode()
+    c2.hashCode()
+  }
+  test("hashcode distintos") {
+    assert(c1.hashCode() != c2.hashCode())
+  }
+  test("Equals") {
+    assert(c1.equals(c1) == true)
+    assert(c2.equals(c2) == true)
+    assert(c1.equals(c2) == false)
+
   }
 }

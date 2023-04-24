@@ -5,6 +5,15 @@ import gwent.cartas.ComunCartas
 
 import java.util.Objects
 
+/***
+ * Clase abstacta con interfaz en ComunCartas, que aplica 3 atributos que tienen todas las carta clima
+ * Hereda de ComunCartas
+ * @param nombrecu
+ * @param habilidad
+ * @param fuerza
+ * El método "hashCode" utiliza la clase "Objects" para generar un código hash único para cada instancia de la clase..
+ * El método "equals" compara dos instancias de la clase para verificar si estas son iguales.
+ */
 abstract class AbstractCU (private val nombrecu: String, private val habilidad: String, private var fuerza: Int) extends ComunCartas{
   def getnombre = {nombrecu}
   def getfuerza =  {fuerza}

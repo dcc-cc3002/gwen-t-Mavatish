@@ -1,6 +1,6 @@
 package test
 
-import cl.uchile.dcc.gwent.cartas.cartaClima.CartaClima
+import cl.uchile.dcc.gwent.cartas.cartaClima.{CartaClima}
 
 class CartaClimaTest extends munit.FunSuite {
   var cc1: CartaClima = _
@@ -14,12 +14,26 @@ class CartaClimaTest extends munit.FunSuite {
   }
 
   test("Un jugador debe tener nombre") {
-    assertEquals(cc1.getnombrecc(), "Zhongli")
-    assertEquals(cc3.getnombrecc(), "Hu-tao")
+    assertEquals(cc1.getnombre, "Zhongli")
+    assertEquals(cc3.getnombre, "Hu-tao")
     assertEquals(cc2.darHabilidad(), "El señor de la noche")
+    assertEquals(cc1.gethabilidad, "atraer")
     assertEquals(cc2, cc2)
   }
-  test ("hashcode") {
+  test("hashcode") {
     cc1.hashCode()
+    cc2.hashCode()
+    cc3.hashCode()
+  }
+  test("hashcode distintos") {
+    assert(cc1.hashCode() != cc2.hashCode())
+    assert(cc2.hashCode() != cc3.hashCode())
+    assert(cc3.hashCode() != cc1.hashCode())
+  }
+  test("Equals") {
+    assert(cc1.equals(cc1) == true)
+    assert(cc2.equals(cc2) == true)
+    assert(cc3.equals(cc3) == true)
+    assert(cc3.equals(cc1) == false)
   }
 }

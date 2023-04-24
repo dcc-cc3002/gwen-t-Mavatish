@@ -34,11 +34,21 @@ class MazoTest extends munit.FunSuite {
     m1.barajar()
   }
   test("Comparando mazos") {
-    assertEquals(m1.equals(m1),true)
+    assertEquals(m1.equals(m1), true)
     assertEquals(m2.equals(m2), true)
     assertEquals(m1.equals(m2), false)
   }
-  test("hashcode"){
+  test("hashcode") {
     m1.hashCode()
+    m2.hashCode()
+  }
+  test("hashcode distintos") {
+    assert(m1.hashCode() != m2.hashCode())
+  }
+  test("Equals") {
+    assert(m1.equals(m1) == true)
+    assert(m2.equals(m2) == true)
+    assert(m2.equals(m1) == false)
+
   }
 }

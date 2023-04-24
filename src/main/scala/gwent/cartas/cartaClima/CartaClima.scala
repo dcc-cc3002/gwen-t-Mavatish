@@ -6,13 +6,13 @@ import gwent.cartas.ComunCartas
 import java.util.Objects
 
 /**
- * Esta clase reepresentara las cartas de Clima junto a su efecto
- *
+ * Esta clase reepresentara las cartas de Clima junto a su Habilidad, esta clase hereda desde ComunCartas
  * @param nombrecc
  * @param efecto
+ * El método "hashCode" utiliza la clase "Objects" para generar un código hash único para cada instancia de la clase..
+ * El método "equals" compara dos instancias de la clase para verificar si estas son iguales. 
  */
-class CartaClima(private val nombrecc: String, private val habilidad: String) extends ComunCartas {
-  def getnombrecc() = nombrecc
+class CartaClima(private val nombrecc: String, private val habilidad: String) extends AbstractCC(nombrecc, habilidad) {
 
   override def darHabilidad(): String = {
     habilidad

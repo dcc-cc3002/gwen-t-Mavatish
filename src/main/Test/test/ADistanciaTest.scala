@@ -13,10 +13,21 @@ class ADistanciaTest extends munit.FunSuite {
   test("Las cartas unidad de tipo A distancia tienen nombre, habilidad y fuerza") {
     assertEquals(d1.darHabilidad(), "atraer")
     assertEquals(d2.darHabilidad(), "El señor de la noche")
+    assertEquals(d1.gethabilidad, "atraer")
+    assertEquals(d2.getfuerza, 6)
     assertEquals(d1, d1)
   }
   test("hashcode"){
     d1.hashCode()
+    d2.hashCode()
   }
+  test("hashcode distintos") {
+    assert(d1.hashCode() != d2.hashCode())
+  }
+  test("Equals"){
+    assert(d1.equals(d1) == true)
+    assert(d2.equals(d2) == true)
+    assert(d1.equals(d2) == false)
 
+}
 }

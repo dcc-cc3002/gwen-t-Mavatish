@@ -13,9 +13,20 @@ class AsedioTest extends munit.FunSuite {
   test("Las cartas unidad de tipo asedio tienen nombre, habilidad y fuerza") {
     assertEquals(a1.darHabilidad(), "atraer")
     assertEquals(a2.darHabilidad(), "El señor de la noche")
+    assertEquals(a1.gethabilidad, "atraer")
+    assertEquals(a2.getfuerza, 6)
     assertEquals(a1, a1)
   }
   test("hashcode"){
     a1.hashCode()
+    a2.hashCode()
+  }
+  test("hashcode distintos") {
+    assert(a1.hashCode() != a2.hashCode())
+  }
+  test("Equals") {
+    assert(a1.equals(a1) == true)
+    assert(a2.equals(a2) == true)
+    assert(a2.equals(a1) == false)
   }
 }
