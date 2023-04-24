@@ -1,5 +1,8 @@
-package cl.uchile.dcc.gwent.cartas
+package cl.uchile.dcc
+package gwent.cartas
 
 trait ComunCartas {
+  def darHabilidad (): String
+  
 
 }

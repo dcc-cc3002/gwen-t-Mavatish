@@ -1,5 +1,4 @@
-package cl.uchile.dcc
-package Test
+package test
 
 import cl.uchile.dcc.gwent.cartas.cartaClima.CartaClima
 
@@ -19,5 +18,8 @@ class CartaClimaTest extends munit.FunSuite {
     assertEquals(cc3.getnombrecc(), "Hu-tao")
     assertEquals(cc2.darHabilidad(), "El señor de la noche")
     assertEquals(cc2, cc2)
+  }
+  test ("hashcode") {
+    cc1.hashCode()
   }
 }

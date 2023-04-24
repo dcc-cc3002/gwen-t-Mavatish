@@ -1,10 +1,9 @@
-package cl.uchile.dcc
-package Test
+package test
 
 import cl.uchile.dcc.gwent.cartas.ComunCartas
-import cl.uchile.dcc.gwent.cartas.mazo.Mazo
-import cl.uchile.dcc.gwent.cartas.cartasUnidad.ADistancia
 import cl.uchile.dcc.gwent.cartas.cartaClima.CartaClima
+import cl.uchile.dcc.gwent.cartas.cartasUnidad.ADistancia
+import cl.uchile.dcc.gwent.cartas.mazo.Mazo
 class MazoTest extends munit.FunSuite {
   var m1: Mazo = _
   var m2: Mazo = _
@@ -35,8 +34,11 @@ class MazoTest extends munit.FunSuite {
     m1.barajar()
   }
   test("Comparando mazos") {
-    assertEquals(m1.equals(m1),true) 
+    assertEquals(m1.equals(m1),true)
     assertEquals(m2.equals(m2), true)
     assertEquals(m1.equals(m2), false)
+  }
+  test("hashcode"){
+    m1.hashCode()
   }
 }

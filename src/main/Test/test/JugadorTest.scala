@@ -1,11 +1,9 @@
-package cl.uchile.dcc
-package Test
+package test
 
 import cl.uchile.dcc.gwent.Jugador
-import cl.uchile.dcc.gwent.cartas.mazo.Mazo
+import cl.uchile.dcc.gwent.cartas.ComunCartas
 import cl.uchile.dcc.gwent.cartas.cartaClima.CartaClima
 import cl.uchile.dcc.gwent.cartas.cartasUnidad.ADistancia
-import cl.uchile.dcc.gwent.cartas.ComunCartas
 import cl.uchile.dcc.gwent.cartas.mazo.Mazo
 
 class JugadorTest extends munit.FunSuite {
@@ -34,5 +32,8 @@ class JugadorTest extends munit.FunSuite {
   test("Las cartas unidad de tipo A distancia tienen nombre, habilidad y fuerza") {
     assertEquals(j1.getnombre(), "Zhongli")
     assertEquals(j2.getcontador(), 4)
+  }
+  test("hashcode"){
+    j1.hashCode()
   }
 }

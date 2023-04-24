@@ -1,5 +1,4 @@
-package cl.uchile.dcc
-package Test
+package test
 
 import cl.uchile.dcc.gwent.cartas.cartasUnidad.CuerpoACuerpo
 class CuerpoACuerpoTest extends munit.FunSuite {
@@ -15,5 +14,8 @@ class CuerpoACuerpoTest extends munit.FunSuite {
     assertEquals(c1.darHabilidad(), "atraer")
     assertEquals(c2.darHabilidad(), "El señor de la noche")
     assertEquals(c1, c1)
+  }
+  test("hashcode"){
+    c1.hashCode()
   }
 }

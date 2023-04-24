@@ -1,5 +1,4 @@
-package cl.uchile.dcc
-package Test
+package test
 
 import cl.uchile.dcc.gwent.cartas.cartasUnidad.Asedio
 class AsedioTest extends munit.FunSuite {
@@ -15,5 +14,8 @@ class AsedioTest extends munit.FunSuite {
     assertEquals(a1.darHabilidad(), "atraer")
     assertEquals(a2.darHabilidad(), "El señor de la noche")
     assertEquals(a1, a1)
+  }
+  test("hashcode"){
+    a1.hashCode()
   }
 }

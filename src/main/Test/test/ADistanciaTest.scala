@@ -1,5 +1,4 @@
-package cl.uchile.dcc
-package Test
+package test
 
 import cl.uchile.dcc.gwent.cartas.cartasUnidad.ADistancia
 class ADistanciaTest extends munit.FunSuite {
@@ -16,6 +15,8 @@ class ADistanciaTest extends munit.FunSuite {
     assertEquals(d2.darHabilidad(), "El señor de la noche")
     assertEquals(d1, d1)
   }
-  
+  test("hashcode"){
+    d1.hashCode()
+  }
 
 }
