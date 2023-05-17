@@ -4,6 +4,8 @@ package gwent
 import gwent.cartas.mazo.Mazo
 
 import cl.uchile.dcc.gwent.cartas.ComunCartas
+import cl.uchile.dcc.gwent.tablero.Tablero
+
 import java.util.Objects
 
 /***
@@ -21,6 +23,8 @@ class Jugador (private val nombre: String, private var contador: Int, private va
   def getcontador() = contador
 
   private var mano = new Mazo(List.empty[ComunCartas])
+  
+  
 
   override def hashCode(): Int= {
     Objects.hash(

@@ -3,7 +3,10 @@ package gwent.cartas.cartaClima
 
 import gwent.cartas.ComunCartas
 
+import cl.uchile.dcc.gwent.tablero.Tablero
+
 import java.util.Objects
+import gwent.tablero.zonas.ZonaCartaClima
 
 /**
  * Esta clase reepresentara las cartas de Clima junto a su Habilidad, esta clase hereda desde AbstractCC
@@ -16,6 +19,10 @@ class CartaClima(private val nombrecc: String, private val habilidad: String) ex
 
   override def darHabilidad(): String = {
     habilidad
+  }
+
+  override def ponerCarta(tablero: Tablero): Unit={
+    tablero.ponerCartaClima(this)
   }
 
   override def hashCode(): Int = {

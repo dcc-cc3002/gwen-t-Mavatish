@@ -9,20 +9,20 @@ import java.util.Objects
  * El método "hashCode" utiliza la clase "Objects" para generar un código hash único para cada instancia de la clase..
  * El método "equals" compara dos instancias de la clase para verificar si estas son iguales.
  */
-abstract class AbstractHabilidadCU (private val nombre: String) {
+abstract class AbstractHabilidadCU (private val habilidad: String) {
   def nombreHabilidad = {
-    nombre
+    habilidad
   }
   override def hashCode(): Int={
     Objects.hash(
-      classOf[AbstractHabilidadCU], nombre)
+      classOf[AbstractHabilidadCU], habilidad)
   }
 
   override def equals(obj: Any): Boolean = {
     if (obj.isInstanceOf[AbstractHabilidadCU]) {
       val other = obj.asInstanceOf[AbstractHabilidadCU]
       (this eq other) ||
-        other.nombre == nombre
+        other.habilidad == habilidad
     } else {
       false
     }

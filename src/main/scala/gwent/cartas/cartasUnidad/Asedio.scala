@@ -1,6 +1,8 @@
 package cl.uchile.dcc
 package gwent.cartas.cartasUnidad
 
+import cl.uchile.dcc.gwent.tablero.Tablero
+
 import java.util.Objects
 
 /***
@@ -17,6 +19,9 @@ class Asedio (nombrecu: String, habilidad: String, fuerza: Int ) extends Abstrac
     habilidad
   }
 
+  override def ponerCarta(tablero: Tablero): Unit = {
+    
+  }
   override def hashCode(): Int={
     Objects.hash(
       classOf[Asedio], nombrecu, habilidad, fuerza)

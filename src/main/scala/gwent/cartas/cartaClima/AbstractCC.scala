@@ -3,6 +3,8 @@ package gwent.cartas.cartaClima
 
 import gwent.cartas.ComunCartas
 
+import cl.uchile.dcc.gwent.cartas.Habilidades.AbstractHabilidadCC
+
 import java.util.Objects
 
 /**
@@ -12,7 +14,7 @@ import java.util.Objects
  * El método "hashCode" utiliza la clase "Objects" para generar un código hash único para cada instancia de la clase..
  * El método "equals" compara dos instancias de la clase para verificar si estas son iguales. 
  */
-abstract class AbstractCC(private val nombrecc: String, private var habilidad: String) extends ComunCartas {
+abstract class AbstractCC(private val nombrecc: String, private var habilidad: String) extends AbstractHabilidadCC(habilidad) with  ComunCartas {
   def getnombre = {
     nombrecc
   }

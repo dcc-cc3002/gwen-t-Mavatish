@@ -3,6 +3,8 @@ package gwent.cartas.cartasUnidad
 
 import gwent.cartas.ComunCartas
 
+import gwent.cartas.Habilidades.AbstractHabilidadCU
+
 import java.util.Objects
 
 /***
@@ -14,7 +16,7 @@ import java.util.Objects
  * El método "hashCode" utiliza la clase "Objects" para generar un código hash único para cada instancia de la clase..
  * El método "equals" compara dos instancias de la clase para verificar si estas son iguales.
  */
-abstract class AbstractCU (private val nombrecu: String, private val habilidad: String, private var fuerza: Int) extends ComunCartas{
+abstract class AbstractCU (private val nombrecu: String, private val habilidad: String, private var fuerza: Int) extends AbstractHabilidadCU(habilidad) with ComunCartas {
   def getnombre = {nombrecu}
   def getfuerza =  {fuerza}
   def gethabilidad = {habilidad}

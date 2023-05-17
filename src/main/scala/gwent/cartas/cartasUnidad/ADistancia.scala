@@ -1,6 +1,9 @@
 package cl.uchile.dcc
 package gwent.cartas.cartasUnidad
 
+import cl.uchile.dcc.gwent.cartas.Habilidades.AbstractHabilidadCU
+import cl.uchile.dcc.gwent.tablero.Tablero
+
 import java.util.Objects
 
 /***
@@ -13,11 +16,15 @@ import java.util.Objects
  * El método "equals" compara dos instancias de la clase para verificar si estas son iguales.
  */
 
-class ADistancia (nombrecu: String, habilidad: String, fuerza: Int ) extends AbstractCU (nombrecu, habilidad, fuerza) {
+class ADistancia (nombrecu: String, habilidad: String, fuerza: Int ) extends AbstractCU (nombrecu, habilidad, fuerza){
   override def darHabilidad(): String = {
     habilidad
   }
 
+  override def ponerCarta(tablero: Tablero): Unit = {
+    
+  }
+  
   override def hashCode(): Int = {
     Objects.hash(
       classOf[ADistancia], nombrecu, habilidad, fuerza)

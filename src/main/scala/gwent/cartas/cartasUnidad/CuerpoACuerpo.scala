@@ -1,6 +1,8 @@
 package cl.uchile.dcc
 package gwent.cartas.cartasUnidad
 
+import cl.uchile.dcc.gwent.tablero.Tablero
+
 import java.util.Objects
 
 /***
@@ -15,6 +17,10 @@ import java.util.Objects
 class CuerpoACuerpo (nombrecu: String, habilidad: String, fuerza: Int) extends AbstractCU(nombrecu, habilidad, fuerza) {
   override def darHabilidad(): String = {
     habilidad
+  }
+
+  override def ponerCarta(tablero: Tablero): Unit = {
+    
   }
 
   override def hashCode(): Int={

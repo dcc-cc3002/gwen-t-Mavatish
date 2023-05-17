@@ -10,20 +10,20 @@ import java.util.Objects
  * El método "equals" compara dos instancias de la clase para verificar si estas son iguales.
  */
 
-abstract class AbstractHabilidadCC (private val nombre: String){
+abstract class AbstractHabilidadCC (private val habilidad: String){
   def nombreHabilidad ={
-    nombre
+    habilidad
   }
   override def hashCode(): Int={
     Objects.hash(
-      classOf[AbstractHabilidadCC], nombre)
+      classOf[AbstractHabilidadCC], habilidad)
   }
 
   override def equals(obj: Any): Boolean = {
     if (obj.isInstanceOf[AbstractHabilidadCC]) {
       val other = obj.asInstanceOf[AbstractHabilidadCC]
       (this eq other) ||
-        other.nombre == nombre
+        other.habilidad == habilidad
     } else {
       false
     }
