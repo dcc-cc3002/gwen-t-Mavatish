@@ -1,7 +1,8 @@
 package cl.uchile.dcc
 package gwent.cartas.cartasUnidad
 
-import cl.uchile.dcc.gwent.tablero.Tablero
+import cl.uchile.dcc.gwent.cartas.Habilidades.AbstractHabilidadCU
+import cl.uchile.dcc.gwent.tablero.{Tablero, TableroJugador}
 
 import java.util.Objects
 
@@ -14,13 +15,10 @@ import java.util.Objects
  * El método "hashCode" utiliza la clase "Objects" para generar un código hash único para cada instancia de la clase..
  * El método "equals" compara dos instancias de la clase para verificar si estas son iguales.
  */
-class CuerpoACuerpo (nombrecu: String, habilidad: String, fuerza: Int) extends AbstractCU(nombrecu, habilidad, fuerza) {
-  override def darHabilidad(): String = {
-    habilidad
-  }
-
-  override def ponerCarta(tablero: Tablero): Unit = {
-    
+class CuerpoACuerpo (nombrecu: String, habilidad: AbstractHabilidadCU, fuerza: Int) extends AbstractCU(nombrecu, habilidad, fuerza) {
+  override def aplicarHabilidad(): Unit = habilidad.aplicar()
+  override def ponerCarta(tablero: TableroJugador): Unit = {
+    tablero.ponerCartaACuerpo(this)
   }
 
   override def hashCode(): Int={
@@ -32,9 +30,9 @@ class CuerpoACuerpo (nombrecu: String, habilidad: String, fuerza: Int) extends A
     if (obj.isInstanceOf[CuerpoACuerpo]) {
       val other = obj.asInstanceOf[CuerpoACuerpo]
       (this eq other) ||
-        other.getnombre == nombrecu &&
-          other.gethabilidad == habilidad &&
-          other.getfuerza == fuerza
+        other.nombrecu == nombrecu &&
+          other.habilidad == habilidad &&
+          other.fuerza == fuerza
     } else {
       false
     }

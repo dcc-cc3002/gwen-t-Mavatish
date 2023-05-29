@@ -3,6 +3,8 @@ package gwent.cartas.Habilidades.habilidadescu
 
 import gwent.cartas.Habilidades.AbstractHabilidadCU
 
-object VinculoEstrecho extends AbstractHabilidadCU(habilidad= "Vinculo Estrecho"){
-
+object VinculoEstrecho extends AbstractHabilidadCU(nombreHabilidad= "Vinculo Estrecho"){
+  override def aplicar(): Unit = {
+    println("Efecto")
+  }
 }

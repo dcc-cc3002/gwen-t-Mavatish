@@ -20,7 +20,17 @@ import java.util.Objects
  */
 class Jugador (private val nombre: String, private var contador: Int, private var mazo: Mazo) {
   def getnombre() = nombre
-  def getcontador() = contador
+  def getcontador(): Unit = {
+    if (contador > 0){
+      println(contador)
+    }
+    else if (contador < 0){
+      println("no hay vidas")
+    }
+    else{
+      println("Quedan 0 vidas ")
+    }
+  }
 
   private var mano = new Mazo(List.empty[ComunCartas])
   
@@ -35,8 +45,7 @@ class Jugador (private val nombre: String, private var contador: Int, private va
     if (obj.isInstanceOf[Jugador]) {
       val other = obj.asInstanceOf[Jugador]
       (this eq other) ||
-        other.getnombre() == nombre &&
-          other.getcontador() == contador
+        other.getnombre() == nombre
     } else {
       false
     }

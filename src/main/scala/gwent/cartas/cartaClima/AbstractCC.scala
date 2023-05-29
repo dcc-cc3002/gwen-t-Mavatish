@@ -14,14 +14,7 @@ import java.util.Objects
  * El método "hashCode" utiliza la clase "Objects" para generar un código hash único para cada instancia de la clase..
  * El método "equals" compara dos instancias de la clase para verificar si estas son iguales. 
  */
-abstract class AbstractCC(private val nombrecc: String, private var habilidad: String) extends AbstractHabilidadCC(habilidad) with  ComunCartas {
-  def getnombre = {
-    nombrecc
-  }
-
-  def gethabilidad = {
-    habilidad
-  }
+abstract class AbstractCC( val nombrecc: String, val habilidad: AbstractHabilidadCC) extends ComunCartas {
 
   override def hashCode(): Int ={
     Objects.hash(
@@ -32,8 +25,8 @@ abstract class AbstractCC(private val nombrecc: String, private var habilidad: S
     if (obj.isInstanceOf[AbstractCC]) {
       val other = obj.asInstanceOf[AbstractCC]
       (this eq other) ||
-        other.getnombre == nombrecc &&
-          other.gethabilidad == habilidad 
+        other.nombrecc == nombrecc &&
+          other.habilidad == habilidad 
     } else {
       false
     }

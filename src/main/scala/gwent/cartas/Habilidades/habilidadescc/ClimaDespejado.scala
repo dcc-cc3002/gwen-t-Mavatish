@@ -3,6 +3,8 @@ package gwent.cartas.Habilidades.habilidadescc
 
 import gwent.cartas.Habilidades.AbstractHabilidadCC
 
-object ClimaDespejado extends AbstractHabilidadCC(habilidad= "Clima Despejado"){
-
+object ClimaDespejado extends AbstractHabilidadCC(nombreHabilidad= "Clima Despejado"){
+  override def aplicar(): Unit = {
+    println("Efecto")
+  }
 }

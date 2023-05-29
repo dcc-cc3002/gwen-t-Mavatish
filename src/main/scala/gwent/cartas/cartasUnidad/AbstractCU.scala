@@ -4,7 +4,6 @@ package gwent.cartas.cartasUnidad
 import gwent.cartas.ComunCartas
 
 import gwent.cartas.Habilidades.AbstractHabilidadCU
-
 import java.util.Objects
 
 /***
@@ -13,28 +12,12 @@ import java.util.Objects
  * @param nombrecu
  * @param habilidad
  * @param fuerza
- * El método "hashCode" utiliza la clase "Objects" para generar un código hash único para cada instancia de la clase..
- * El método "equals" compara dos instancias de la clase para verificar si estas son iguales.
+ * El metodo CambiodeFuerza permite actualizar la fuerza, siento la variable fuerzaActual la fuerza inicial 
  */
-abstract class AbstractCU (private val nombrecu: String, private val habilidad: String, private var fuerza: Int) extends AbstractHabilidadCU(habilidad) with ComunCartas {
-  def getnombre = {nombrecu}
-  def getfuerza =  {fuerza}
-  def gethabilidad = {habilidad}
+abstract class AbstractCU (val nombrecu: String, val habilidad: AbstractHabilidadCU, val fuerza: Int) extends ComunCartas {
+  var fuerzaActual = fuerza
 
-  override def hashCode():  Int={
-    Objects.hash(
-      classOf[AbstractCU], nombrecu, habilidad, fuerza)
-  }
-
-  override def equals(obj: Any): Boolean = {
-    if (obj.isInstanceOf[AbstractCU]) {
-      val other = obj.asInstanceOf[AbstractCU]
-      (this eq other) ||
-        other.getnombre == nombrecu &&
-          other.gethabilidad == habilidad &&
-          other.getfuerza == fuerza
-    } else {
-      false
-    }
+  def CambioFuerza(FuerzaNueva: Int): Unit = {
+    fuerzaActual += FuerzaNueva
   }
 }

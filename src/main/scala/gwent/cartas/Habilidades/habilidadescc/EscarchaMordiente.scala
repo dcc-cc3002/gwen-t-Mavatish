@@ -3,6 +3,9 @@ package gwent.cartas.Habilidades.habilidadescc
 
 import gwent.cartas.Habilidades.AbstractHabilidadCC
 
-object EscarchaMordiente extends AbstractHabilidadCC(habilidad= "Escarcha Mordiete"){
+object EscarchaMordiente extends AbstractHabilidadCC(nombreHabilidad= "Escarcha Mordiete"){
+  override def aplicar(): Unit = {
+    println("Efecto")
+  }
 
 }

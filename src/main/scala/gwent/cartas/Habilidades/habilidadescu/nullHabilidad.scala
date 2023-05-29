@@ -3,7 +3,10 @@ package gwent.cartas.Habilidades.habilidadescu
 
 import gwent.cartas.Habilidades.AbstractHabilidadCU
 
-object RefuerzoMoral extends AbstractHabilidadCU(nombreHabilidad = "Refuerzo Moral"){
+/***
+ * Objeto que representa a la habilidad null
+ */
+object nullHabilidad extends AbstractHabilidadCU(nombreHabilidad = "null") {
   override def aplicar(): Unit = {
     println("Efecto")
   }

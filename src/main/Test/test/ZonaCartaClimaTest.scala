@@ -23,5 +23,7 @@ class ZonaCartaClimaTest extends munit.FunSuite {
     assert(d1.equals(d1) == true)
     assert(d2.equals(d2) == true)
     assert(d1.equals(d2) == false)
+    assert(d2.equals(2) == false)
   }
 }
+

@@ -3,41 +3,26 @@ package gwent.cartas.cartaClima
 
 import gwent.cartas.ComunCartas
 
-import cl.uchile.dcc.gwent.tablero.Tablero
+import cl.uchile.dcc.gwent.tablero.{Tablero, TableroJugador}
 
 import java.util.Objects
 import gwent.tablero.zonas.ZonaCartaClima
 
+import cl.uchile.dcc.gwent.cartas.Habilidades.AbstractHabilidadCC
+
 /**
  * Esta clase reepresentara las cartas de Clima junto a su Habilidad, esta clase hereda desde AbstractCC
  * @param nombrecc
- * @param efecto
- * El método "hashCode" utiliza la clase "Objects" para generar un código hash único para cada instancia de la clase..
- * El método "equals" compara dos instancias de la clase para verificar si estas son iguales.
+ * @param habilidad
+ * El metodo aplicarHabilidad aplica la habilidad de las cartas clima 
+ * El metodo ponerCarta permite poner las carta clima en el tablero en la seccion de las carta clima
  */
-class CartaClima(private val nombrecc: String, private val habilidad: String) extends AbstractCC(nombrecc, habilidad) {
+class CartaClima(nombrecc: String, habilidad: AbstractHabilidadCC) extends AbstractCC(nombrecc, habilidad) {
 
-  override def darHabilidad(): String = {
-    habilidad
-  }
+  override def aplicarHabilidad(): Unit = habilidad.aplicar()
 
-  override def ponerCarta(tablero: Tablero): Unit={
+  override def ponerCarta(tablero: TableroJugador): Unit = {
     tablero.ponerCartaClima(this)
   }
 
-  override def hashCode(): Int = {
-    Objects.hash(
-      classOf[CartaClima], nombrecc, habilidad)
-  }
-
-  override def equals(obj: Any): Boolean = {
-    if (obj.isInstanceOf[CartaClima]) {
-      val other = obj.asInstanceOf[CartaClima]
-      (this eq other) ||
-        other.nombrecc == nombrecc &&
-          other.habilidad == habilidad
-    } else {
-      false
-    }
-  }
 }

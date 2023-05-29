@@ -4,6 +4,8 @@ import cl.uchile.dcc.gwent.cartas.ComunCartas
 import cl.uchile.dcc.gwent.cartas.cartaClima.CartaClima
 import cl.uchile.dcc.gwent.cartas.cartasUnidad.ADistancia
 import cl.uchile.dcc.gwent.cartas.mazo.Mazo
+import cl.uchile.dcc.gwent.cartas.Habilidades.habilidadescu.nullHabilidad
+import cl.uchile.dcc.gwent.cartas.Habilidades.habilidadescc.{LluviaTorrencial, NieblaImpenetrable, nullHabilidadcc}
 class MazoTest extends munit.FunSuite {
   var m1: Mazo = _
   var m2: Mazo = _
@@ -13,10 +15,10 @@ class MazoTest extends munit.FunSuite {
   var gato4: ADistancia = _
 
   override def beforeEach(context: BeforeEach): Unit = {
-    gato1 = new ADistancia("Wiska", "Molestar", 10)
-    gato2 = new CartaClima("Botas", "rasguñar")
-    gato3 = new CartaClima("Cleo", "dormir")
-    gato4 = new ADistancia("Watson", "investigar", 9)
+    gato1 = new ADistancia("Wiska", habilidad = nullHabilidad, 10)
+    gato2 = new CartaClima("Botas", habilidad = LluviaTorrencial)
+    gato3 = new CartaClima("Cleo", habilidad = NieblaImpenetrable)
+    gato4 = new ADistancia("Watson", habilidad = nullHabilidad, 9)
     var lista1: List[ComunCartas] = List(gato1, gato4)
     var lista2: List[ComunCartas] = List(gato2, gato3)
     m1 = new Mazo(lista1)
@@ -49,6 +51,7 @@ class MazoTest extends munit.FunSuite {
     assert(m1.equals(m1) == true)
     assert(m2.equals(m2) == true)
     assert(m2.equals(m1) == false)
+    assert(m2.equals(2) == false)
 
   }
 }

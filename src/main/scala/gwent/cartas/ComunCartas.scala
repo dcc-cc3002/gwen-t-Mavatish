@@ -1,14 +1,14 @@
 package cl.uchile.dcc
 package gwent.cartas
 
-import gwent.tablero.Tablero
+import gwent.tablero.{Tablero, TableroJugador}
 
 /***
  * Trait que permite dar haabilidad a todas las cartas (puesto que todas tienen una)
  */
 trait ComunCartas {
-  def darHabilidad (): String
+  def aplicarHabilidad (): Unit
   
-  def ponerCarta (tablero: Tablero) : Unit
+  def ponerCarta (tablero: TableroJugador) : Unit
 
 }

@@ -8,14 +8,30 @@ import cl.uchile.dcc.gwent.cartas.cartaClima.CartaClima
 import gwent.cartas.cartasUnidad.ADistancia
 import gwent.cartas.cartasUnidad.Asedio
 import gwent.cartas.cartasUnidad.CuerpoACuerpo
+
 import java.util.Objects
 import gwent.tablero.Tablero
 
-class TableroJugador {
-  protected var zonaDistancia: ZonaADistancia = new ZonaADistancia
-  protected var zonaAsedio: ZonaAsedio = new ZonaAsedio
-  protected var zonaACuerpo : ZonaCuerpoACuerpo = new ZonaCuerpoACuerpo
-  protected var TableroAsociado: Tablero = _
+import cl.uchile.dcc.gwent.Jugador
+import cl.uchile.dcc.gwent.cartas.ComunCartas
+
+/***
+ * La clase tablero Jugador define el secctor del tablero donde cada jugador puede poner sus cartas
+ * @param jugador
+ * El metodo iniciar permite acceder al tablero general y poder poner las cartas
+ * El metodo ponerCartaClima permite poner las cartas de este tipo en el tablero
+ * El metodo ponerCarta permite poner las cartas en el tablero
+ * El metodo ponerCartaDistancia permite poner las cartas de este tipo en el tablero
+ * El metodo ponerCartaAsedio permite poner las cartas de este tipo en el tablero
+ * El metodo ponerCartaACuerpo permite poner las cartas de este tipo en el tablero
+ * El método "hashCode" utiliza la clase "Objects" para generar un código hash único para cada instancia de la clase..
+ * El método "equals" compara dos instancias de la clase para verificar si estas son iguales.
+ */
+class TableroJugador (jugador: Jugador) {
+  private var zonaDistancia: ZonaADistancia = new ZonaADistancia
+  private var zonaAsedio: ZonaAsedio = new ZonaAsedio
+  private var zonaACuerpo : ZonaCuerpoACuerpo = new ZonaCuerpoACuerpo
+  private var TableroAsociado: Tablero = _
   
   def iniciar( tablero: Tablero): Unit ={
     TableroAsociado = tablero
@@ -23,16 +39,20 @@ class TableroJugador {
   def ponerCartaClima(cartaClima: CartaClima): Unit ={
     TableroAsociado.ponerCartaClima(cartaClima)
   }
+  
+  def ponerCarta(carta: ComunCartas): Unit = {
+    carta.ponerCarta(this)
+  }
   def ponerCartaDistancia(cartaDistacia: ADistancia): Unit = {
-    zonaDistancia.CartaD += cartaDistacia
+    zonaDistancia.agregar(cartaDistacia)
   }
 
   def ponerCartaAsedio(cartaAsedio: Asedio): Unit = {
-    zonaAsedio.CartaA += cartaAsedio
+    zonaAsedio.agregar(cartaAsedio)
   }
 
   def ponerCartaACuerpo(cartaACuerpo: CuerpoACuerpo): Unit = {
-    zonaACuerpo.CartaCC += cartaACuerpo
+    zonaACuerpo.agregar(cartaACuerpo)
   }
   
   

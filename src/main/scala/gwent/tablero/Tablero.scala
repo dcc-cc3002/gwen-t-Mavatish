@@ -12,27 +12,30 @@ import cl.uchile.dcc.gwent.cartas.ComunCartas
 import gwent.tablero.TableroJugador
 
 import java.util.Objects
-
-class Tablero (val Jugador1: Jugador, val Jugador2 : Jugador, val TableroJugador1 : TableroJugador, val TableroJugador2 : TableroJugador) {
+/***
+ * La clase tablero define el tablero de juego
+ * @param TableroJugador2
+ * @param TableroJugador1
+ * El metodo ponerCartaClima permite poner las cartas clima en un espacio m ixto donde ambos jugadores pueden acceder
+ * El método "hashCode" utiliza la clase "Objects" para generar un código hash único para cada instancia de la clase..
+ * El método "equals" compara dos instancias de la clase para verificar si estas son iguales.
+ */
+class Tablero (val TableroJugador1 : TableroJugador, val TableroJugador2 : TableroJugador) {
   protected var JCC: ZonaCartaClima = new ZonaCartaClima
-  def ponerCartas (carta: ComunCartas): Unit = {
-    carta.ponerCarta(this)
-  }
+ 
   def ponerCartaClima(cartaClima: CartaClima): Unit = {
-    JCC.CartaC(0) = cartaClima
+    JCC.agregar(cartaClima)
   }
 
   override def hashCode(): Int = {
     Objects.hash(
-      classOf[Tablero], Jugador1, Jugador2, TableroJugador1, TableroJugador2)
+      classOf[Tablero], TableroJugador1, TableroJugador2)
   }
 
   override def equals(obj: Any): Boolean = {
     if (obj.isInstanceOf[Tablero]) {
       val other = obj.asInstanceOf[Tablero]
       (this eq other) ||
-        other.Jugador1 == Jugador1 &&
-          other.Jugador2 == Jugador2 &&
           other.TableroJugador1 == TableroJugador1 &&
           other.TableroJugador2 == TableroJugador2
     } else {
