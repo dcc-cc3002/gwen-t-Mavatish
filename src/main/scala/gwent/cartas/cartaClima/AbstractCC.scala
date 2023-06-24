@@ -4,6 +4,7 @@ package gwent.cartas.cartaClima
 import gwent.cartas.ComunCartas
 
 import cl.uchile.dcc.gwent.cartas.Habilidades.AbstractHabilidadCC
+import cl.uchile.dcc.gwent.tablero.TableroJugador
 
 import java.util.Objects
 
@@ -15,6 +16,11 @@ import java.util.Objects
  * El método "equals" compara dos instancias de la clase para verificar si estas son iguales. 
  */
 abstract class AbstractCC( val nombrecc: String, val habilidad: AbstractHabilidadCC) extends ComunCartas {
+  var Tj: TableroJugador= null
+  
+  override def registrar(tableroJugador: TableroJugador): Unit = {
+    Tj = tableroJugador
+  }
 
   override def hashCode(): Int ={
     Objects.hash(

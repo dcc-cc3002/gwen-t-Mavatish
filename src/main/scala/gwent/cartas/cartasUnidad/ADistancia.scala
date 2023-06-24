@@ -1,6 +1,7 @@
 package cl.uchile.dcc
 package gwent.cartas.cartasUnidad
 
+import cl.uchile.dcc.gwent.cartas.ComunCartas
 import cl.uchile.dcc.gwent.cartas.Habilidades.AbstractHabilidadCU
 import cl.uchile.dcc.gwent.tablero.{Tablero, TableroJugador}
 
@@ -21,6 +22,10 @@ class ADistancia (nombrecu: String, habilidad: AbstractHabilidadCU, fuerza: Int 
   override def aplicarHabilidad(): Unit = habilidad.aplicar()
   override def ponerCarta(tablero: TableroJugador): Unit = {
     tablero.ponerCartaDistancia(this)
+  }
+
+  override def notificar(comunCartas: ComunCartas): Unit = {
+    Tj.actualizarADistacia(this)
   }
   
   override def hashCode(): Int = {

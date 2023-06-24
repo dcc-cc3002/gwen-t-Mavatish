@@ -19,10 +19,15 @@ import cl.uchile.dcc.gwent.cartas.Habilidades.AbstractHabilidadCC
  */
 class CartaClima(nombrecc: String, habilidad: AbstractHabilidadCC) extends AbstractCC(nombrecc, habilidad) {
 
+  override def notificar(comunCartas: ComunCartas): Unit = {
+    Tj.actualizarCClima(this)
+  }
+
   override def aplicarHabilidad(): Unit = habilidad.aplicar()
 
   override def ponerCarta(tablero: TableroJugador): Unit = {
     tablero.ponerCartaClima(this)
   }
+  
 
 }

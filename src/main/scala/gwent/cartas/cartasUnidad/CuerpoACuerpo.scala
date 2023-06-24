@@ -1,6 +1,7 @@
 package cl.uchile.dcc
 package gwent.cartas.cartasUnidad
 
+import cl.uchile.dcc.gwent.cartas.ComunCartas
 import cl.uchile.dcc.gwent.cartas.Habilidades.AbstractHabilidadCU
 import cl.uchile.dcc.gwent.tablero.{Tablero, TableroJugador}
 
@@ -19,6 +20,10 @@ class CuerpoACuerpo (nombrecu: String, habilidad: AbstractHabilidadCU, fuerza: I
   override def aplicarHabilidad(): Unit = habilidad.aplicar()
   override def ponerCarta(tablero: TableroJugador): Unit = {
     tablero.ponerCartaACuerpo(this)
+  }
+
+  override def notificar(comunCartas: ComunCartas): Unit = {
+    Tj.actualizarCuerpoACuerpo(this)
   }
 
   override def hashCode(): Int={

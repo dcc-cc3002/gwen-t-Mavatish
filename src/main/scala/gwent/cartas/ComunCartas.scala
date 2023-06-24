@@ -10,5 +10,8 @@ trait ComunCartas {
   def aplicarHabilidad (): Unit
   
   def ponerCarta (tablero: TableroJugador) : Unit
+  
+  def registrar(tableroJugador: TableroJugador): Unit
+   def notificar(comunCartas: ComunCartas): Unit
 
 }

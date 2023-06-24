@@ -2,8 +2,10 @@ package cl.uchile.dcc
 package gwent.cartas.cartasUnidad
 
 import gwent.cartas.ComunCartas
-
 import gwent.cartas.Habilidades.AbstractHabilidadCU
+
+import cl.uchile.dcc.gwent.tablero.TableroJugador
+
 import java.util.Objects
 
 /***
@@ -16,8 +18,13 @@ import java.util.Objects
  */
 abstract class AbstractCU (val nombrecu: String, val habilidad: AbstractHabilidadCU, val fuerza: Int) extends ComunCartas {
   var fuerzaActual = fuerza
+  var Tj: TableroJugador= null
 
   def CambioFuerza(FuerzaNueva: Int): Unit = {
     fuerzaActual += FuerzaNueva
+  }
+
+  override def registrar(tableroJugador: TableroJugador): Unit = {
+    Tj= tableroJugador
   }
 }

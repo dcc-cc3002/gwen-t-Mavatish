@@ -1,6 +1,7 @@
 package cl.uchile.dcc
-package gwent.patrones
-import cl.uchile.dcc.gwent.patrones.Controller
+package gwent.patrones.StatePattern
+
+import gwent.patrones.StatePattern.Controller
 
 class State {
 protected def changeState(controller: Controller, state: State): Unit = { controller.setState(state)}

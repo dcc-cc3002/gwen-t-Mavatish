@@ -1,6 +1,8 @@
 package cl.uchile.dcc
-package gwent.patrones
-import cl.uchile.dcc.gwent.patrones.IniciarJuego
+package gwent.patrones.StatePattern
+
+import cl.uchile.dcc.gwent.patrones.StatePattern.State
+import cl.uchile.dcc.gwent.patrones.StatePattern.IniciarJuego
 
 class Controller() {
   private var state: State = new IniciarJuego()

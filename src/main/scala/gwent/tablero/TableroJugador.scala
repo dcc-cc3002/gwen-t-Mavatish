@@ -54,7 +54,23 @@ class TableroJugador (jugador: Jugador) {
   def ponerCartaACuerpo(cartaACuerpo: CuerpoACuerpo): Unit = {
     zonaACuerpo.agregar(cartaACuerpo)
   }
+
+  def actualizarADistacia( adistancia: ADistancia): Unit={
+    adistancia.aplicarHabilidad()
+  }
+
+  def actualizarAsedio(asedio: Asedio): Unit = {
+    asedio.aplicarHabilidad()
+  }
+
+  def actualizarCuerpoACuerpo(cuerpoACuerpo: CuerpoACuerpo): Unit = {
+    cuerpoACuerpo.aplicarHabilidad()
+  }
   
+  def actualizarCClima(cartaClima: CartaClima): Unit={
+    TableroAsociado.ponerCartaClima(cartaClima)
+    cartaClima.aplicarHabilidad()
+  }
   
   override def hashCode(): Int = {
     Objects.hash(
