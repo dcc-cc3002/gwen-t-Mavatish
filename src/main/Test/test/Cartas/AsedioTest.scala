@@ -1,7 +1,7 @@
-package test
+package test.Cartas
 
-import cl.uchile.dcc.gwent.cartas.cartasUnidad.Asedio
 import cl.uchile.dcc.gwent.cartas.Habilidades.habilidadescu.nullHabilidad
+import cl.uchile.dcc.gwent.cartas.cartasUnidad.Asedio
 class AsedioTest extends munit.FunSuite {
   var a1: Asedio = _
   var a2: Asedio = _

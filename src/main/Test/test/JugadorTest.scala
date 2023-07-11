@@ -28,9 +28,9 @@ class JugadorTest extends munit.FunSuite {
     var lista2: List[ComunCartas] = List(gato2, gato3)
     m1 = new Mazo(lista1)
     m2 = new Mazo(lista2)
-    j1 = new Jugador("Zhongli", 3, m1)
-    j2 = new Jugador("Diluc", 0, m2)
-    j3 = new Jugador("Botas", -1, m2)
+    j1 = new Jugador("Zhongli",  m1)
+    j2 = new Jugador("Diluc",  m2)
+    j3 = new Jugador("Botas",  m2)
   }
 
   test("Las cartas unidad de tipo A distancia tienen nombre, habilidad y fuerza") {

@@ -1,13 +1,14 @@
-package test
-import cl.uchile.dcc.gwent.tablero.zonas.ZonaADistancia
+package test.Tablero
 
-class ZonaADistanciaTest extends munit.FunSuite {
-  var d1: ZonaADistancia = _
-  var d2: ZonaADistancia = _
+import cl.uchile.dcc.gwent.tablero.zonas.ZonaAsedio
+
+class ZonaAsedioTest extends munit.FunSuite {
+  var d1: ZonaAsedio = _
+  var d2: ZonaAsedio = _
 
   override def beforeEach(context: BeforeEach): Unit = {
-    d1 = new ZonaADistancia()
-    d2 = new ZonaADistancia()
+    d1 = new ZonaAsedio()
+    d2 = new ZonaAsedio()
   }
 
   test("hashcode") {
@@ -25,3 +26,4 @@ class ZonaADistanciaTest extends munit.FunSuite {
     assert(d2.equals(2) == false)
   }
 }
+

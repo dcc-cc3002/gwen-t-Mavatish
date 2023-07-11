@@ -1,15 +1,13 @@
-package test
+package test.Tablero
+
 import cl.uchile.dcc.gwent.Jugador
 import cl.uchile.dcc.gwent.cartas.ComunCartas
-import cl.uchile.dcc.gwent.cartas.cartasUnidad.Asedio
-import cl.uchile.dcc.gwent.cartas.cartasUnidad.ADistancia
-import cl.uchile.dcc.gwent.cartas.cartasUnidad.CuerpoACuerpo
-import cl.uchile.dcc.gwent.cartas.mazo.Mazo
-import cl.uchile.dcc.gwent.tablero.Tablero
-import cl.uchile.dcc.gwent.tablero.TableroJugador
-import cl.uchile.dcc.gwent.cartas.cartaClima.CartaClima
-import cl.uchile.dcc.gwent.cartas.Habilidades.habilidadescu.nullHabilidad
 import cl.uchile.dcc.gwent.cartas.Habilidades.habilidadescc.nullHabilidadcc
+import cl.uchile.dcc.gwent.cartas.Habilidades.habilidadescu.nullHabilidad
+import cl.uchile.dcc.gwent.cartas.cartaClima.CartaClima
+import cl.uchile.dcc.gwent.cartas.cartasUnidad.{ADistancia, Asedio, CuerpoACuerpo}
+import cl.uchile.dcc.gwent.cartas.mazo.Mazo
+import cl.uchile.dcc.gwent.tablero.{Tablero, TableroJugador}
 
 class TableroTest extends munit.FunSuite {
   var d1: Tablero = _
@@ -42,9 +40,9 @@ class TableroTest extends munit.FunSuite {
     m1 = new Mazo(lista1)
     m2 = new Mazo(lista2)
     m3 = new Mazo(lista3)
-    j1 = new Jugador("Zhongli", 3, m1)
-    j2 = new Jugador("Diluc", 4, m2)
-    j3 = new Jugador( "Pepe", 9, m3)
+    j1 = new Jugador("Zhongli",  m1)
+    j2 = new Jugador("Diluc",  m2)
+    j3 = new Jugador( "Pepe",  m3)
     tj1 = new TableroJugador(j1)
     tj2 = new TableroJugador(j2)
     tj3 = new TableroJugador(j3)

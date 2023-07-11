@@ -1,8 +1,8 @@
-package test
+package test.Cartas
 
-import cl.uchile.dcc.gwent.cartas.cartaClima.CartaClima
-import cl.uchile.dcc.gwent.cartas.Habilidades.habilidadescc.{ClimaDespejado, EscarchaMordiente, LluviaTorrencial, NieblaImpenetrable, nullHabilidadcc}
+import cl.uchile.dcc.gwent.cartas.Habilidades.habilidadescc.*
 import cl.uchile.dcc.gwent.cartas.Habilidades.habilidadescu.RefuerzoMoral
+import cl.uchile.dcc.gwent.cartas.cartaClima.CartaClima
 
 class CartaClimaTest extends munit.FunSuite {
   var cc1: CartaClima = _

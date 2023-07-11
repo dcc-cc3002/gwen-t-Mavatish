@@ -1,8 +1,8 @@
-package test
+package test.Cartas
 
 import cl.uchile.dcc.gwent.cartas.Habilidades.habilidadescc.ClimaDespejado
-import cl.uchile.dcc.gwent.cartas.cartasUnidad.ADistancia
 import cl.uchile.dcc.gwent.cartas.Habilidades.habilidadescu.{RefuerzoMoral, VinculoEstrecho, nullHabilidad}
+import cl.uchile.dcc.gwent.cartas.cartasUnidad.ADistancia
 class ADistanciaTest extends munit.FunSuite {
   var d1: ADistancia = _
   var d2: ADistancia = _

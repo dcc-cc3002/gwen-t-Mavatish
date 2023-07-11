@@ -1,4 +1,4 @@
-package test
+package test.Tablero
 
 import cl.uchile.dcc.gwent.tablero.zonas.ZonaCartaClima
 

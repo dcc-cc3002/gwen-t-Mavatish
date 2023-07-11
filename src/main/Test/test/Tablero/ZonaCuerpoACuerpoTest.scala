@@ -1,4 +1,5 @@
-package test
+package test.Tablero
+
 import cl.uchile.dcc.gwent.tablero.zonas.ZonaCuerpoACuerpo
 class ZonaCuerpoACuerpoTest extends munit.FunSuite {
   var d1: ZonaCuerpoACuerpo = _

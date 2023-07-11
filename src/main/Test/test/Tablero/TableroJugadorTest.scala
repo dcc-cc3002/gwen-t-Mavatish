@@ -1,4 +1,5 @@
-package test
+package test.Tablero
+
 import cl.uchile.dcc.gwent.Jugador
 import cl.uchile.dcc.gwent.cartas.ComunCartas
 import cl.uchile.dcc.gwent.cartas.Habilidades.habilidadescu.{RefuerzoMoral, VinculoEstrecho, nullHabilidad}
@@ -27,8 +28,8 @@ class TableroJugadorTest extends munit.FunSuite {
     var lista2: List[ComunCartas] = List(gato2, gato3)
     m1 = new Mazo(lista1)
     m2 = new Mazo(lista2)
-    j1 = new Jugador("Zhongli", 3, m1)
-    j2 = new Jugador("Diluc", 4, m2)
+    j1 = new Jugador("Zhongli", m1)
+    j2 = new Jugador("Diluc", m2)
     d1 = new TableroJugador(j1)
     d2 = new TableroJugador(j2)
   }

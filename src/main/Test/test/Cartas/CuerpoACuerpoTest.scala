@@ -1,7 +1,7 @@
-package test
+package test.Cartas
 
-import cl.uchile.dcc.gwent.cartas.cartasUnidad.CuerpoACuerpo
 import cl.uchile.dcc.gwent.cartas.Habilidades.habilidadescu.nullHabilidad
+import cl.uchile.dcc.gwent.cartas.cartasUnidad.CuerpoACuerpo
 class CuerpoACuerpoTest extends munit.FunSuite {
   var c1: CuerpoACuerpo = _
   var c2: CuerpoACuerpo = _
