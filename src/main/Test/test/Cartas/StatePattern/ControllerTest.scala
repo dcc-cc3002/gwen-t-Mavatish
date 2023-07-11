@@ -7,16 +7,7 @@ class ControllerTest extends munit.FunSuite {
   val controller = new Controller()
   val state = new IniciarJuego()
   val state1 = new FinRonda()
-  val state2 = new IniciarJuego()
-  val state3 = new JSinLimites()
-  val state4 = new Jugar()
-  val state5 = new NuevasRondas()
-  val state6 = new PrimeraRonda()
-  val state7 = new PrimerJugador()
-  val state8 = new Resultado()
-  val state9 = new TConPasar()
-  val state10 = new TSinPasar()
-  val state11 = new Turnos()
+
 
 
   test("setState actualiza estado") {
