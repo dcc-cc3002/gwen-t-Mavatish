@@ -1,4 +1,4 @@
-package test.Cartas.StatePattern
+package test.StatePattern
 
 import cl.uchile.dcc.gwent.patrones.StatePattern.{Controller, FinRonda, IniciarJuego, JSinLimites, Jugar, NuevasRondas, PrimerJugador, PrimeraRonda, Resultado, State, TConPasar, TSinPasar, Turnos}
 import org.junit.Assert.assertThrows
