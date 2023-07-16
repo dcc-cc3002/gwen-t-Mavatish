@@ -7,6 +7,7 @@ import cl.uchile.dcc.gwent.cartas.cartasUnidad.ADistancia
 import cl.uchile.dcc.gwent.cartas.mazo.Mazo
 import cl.uchile.dcc.gwent.cartas.Habilidades.habilidadescu.nullHabilidad
 import cl.uchile.dcc.gwent.cartas.Habilidades.habilidadescc.nullHabilidadcc
+import cl.uchile.dcc.gwent.patrones.StatePattern.Controller
 
 class JugadorTest extends munit.FunSuite {
   var j1: Jugador = _
@@ -53,5 +54,11 @@ class JugadorTest extends munit.FunSuite {
     j1.getcontador()
     j2.getcontador()
     j3.getcontador()
+  }
+  test ("clases del metodo observer"){
+    val observer = new Controller()
+    j1.addObserver(observer)
+    j2.removeObserver(observer)
+    j3.notifyObservers()
   }
 }

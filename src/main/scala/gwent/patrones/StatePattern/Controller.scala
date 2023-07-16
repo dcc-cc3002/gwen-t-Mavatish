@@ -15,17 +15,16 @@ import cl.uchile.dcc.gwent.patrones.StatePattern.IniciarJuego
    * El método crearJTM se utiliza para crear una JTM (Jugador, Tablero y Mano) en el juego.
    * El método sacarCartas se utiliza para sacar cartas en el juego.
    * El método empezar se utiliza para empezar el juego.
-   * El método empezar2 se utiliza para empezar una segunda vez el juego.
-   * El método siguienteJugada" del estado actual.
-   * Este método se utiliza para pasar a la siguiente jugada en el juego.
-   * El método paso utiliza para indicar que el jugador ha pasado su turno en el juego.
+   * El método empezar2 se utiliza para empezar otra ronda.
+   * El método siguienteJugada se utiliza para pasar a la siguiente jugada en el juego.
+   * El método paso se utiliza para indicar que el jugador ha pasado su turno .
    * El método pasar se utiliza para pasar el turno en el juego.
-   * El método pasar2 se utiliza para pasar el turno por segunda vez en el juego.
+   * El método pasar2 se utiliza para pasar del estado Jugar sin limites a Turnos.
    * El método jugarCarta se utiliza para jugar una carta en el juego.
-   * El método jugarCarta2 se utiliza para jugar una segunda carta en el juego.
-   * El método noPaso se utiliza para indicar que el jugador no ha pasado su turno en el juego.
+   * El método jugarCarta2 se utiliza para jugar cartas sin limites en el estado Jugar sin Limites.
+   * El método noPaso se utiliza cuando el jugador si jugo una carta.
    * El método contarPuntos se utiliza para contar los puntos en el juego.
-   * El método sinLimites se utiliza para indicar que el juego no tiene límites.
+   * El método sinLimites se utiliza para saber que se jugara una cantidad de cartas sin limites (las que desee jugaer el jugador).
    * El método perdio se utiliza para indicar que el jugador ha perdido en el juego.
    * El método gano se utiliza para indicar que el jugador ha ganado en el juego.
    */

@@ -5,7 +5,11 @@ import cl.uchile.dcc.gwent.patrones.StatePattern.State
 import cl.uchile.dcc.gwent.patrones.StatePattern.Controller
 import cl.uchile.dcc.gwent.patrones.StatePattern.NuevasRondas
 import cl.uchile.dcc.gwent.patrones.StatePattern.FinRonda
-
+/**
+ * Clase Resultado que representa el estado donde se entrega el resultado de la partida
+ * Extiende la clase abstracta State.
+ * @return true, ya que este estado específico es el estado de "Resultado".
+ */
 class Resultado extends State {
   override def perdio(controller: Controller): Unit = this.changeState(controller, new NuevasRondas())
   override def gano(controller: Controller): Unit = this.changeState(controller, new FinRonda())
