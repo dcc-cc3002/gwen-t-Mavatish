@@ -1,0 +1,67 @@
+package cl.uchile.dcc
+package gwent
+
+import gwent.cartas.mazo.Mazo
+
+import cl.uchile.dcc.gwent.cartas.ComunCartas
+import cl.uchile.dcc.gwent.patronObserver.Observer
+import cl.uchile.dcc.gwent.tablero.Tablero
+
+import java.util.Objects
+import scala.collection.mutable.ListBuffer
+
+/***
+
+ * Esta clase represetara al jugador junto a las caracteristicas que este debe tener
+ * @param nombre
+ * esta variable se utilizara para contar las gemas, lo cual representa a las vidas del jugador
+ * @param mazo
+ * El método "hashCode" utiliza la clase "Objects" para generar un código hash único para cada instancia de la clase..
+ * El método "equals" compara dos instancias de la clase para verificar si estas son iguales.
+ */
+class Jugador (private val nombre: String, private var mazo: Mazo) {
+  private val observers: ListBuffer[Observer] = ListBuffer()
+  var contador: Int = 2
+  def addObserver(observer: Observer): Unit = {
+    observers += observer
+  }
+  def removeObserver(observer: Observer): Unit = {
+    observers -= observer
+  }
+  
+  def getnombre() = nombre
+  def getcontador(): Unit = {
+    if (contador > 0){
+      contador -= 1
+      println(contador)
+    }
+    else if (contador < 0){
+      println("no hay vidas")
+    }
+    else{
+      notifyObservers()
+      println("Quedan 0 vidas ")
+    }
+  }
+def notifyObservers(): Unit = {
+  observers.foreach(_.update())
+}
+  private var mano = new Mazo(List.empty[ComunCartas])
+  
+  
+
+  override def hashCode(): Int= {
+    Objects.hash(
+      classOf[Jugador], nombre)
+  }
+
+  override def equals(obj: Any): Boolean = {
+    if (obj.isInstanceOf[Jugador]) {
+      val other = obj.asInstanceOf[Jugador]
+      (this eq other) ||
+        other.getnombre() == nombre
+    } else {
+      false
+    }
+  }
+}
